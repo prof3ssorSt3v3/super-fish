@@ -40,7 +40,7 @@
   }
   .page {
     position: absolute;
-    inset: 6rem 0 auto 0;
+    inset: calc(6rem + 2rem + 2px) 0 auto 0;
     padding: 1rem 2rem;
     /* opacity: 0; */
     transition: opacity 0.4s linear;
@@ -66,10 +66,44 @@
 }
 
 @layer nav {
+  nav.main-nav {
+    min-height: 2rem;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    background-color: hsl(30, 80%, 90%);
+    margin: 0;
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+
+    a {
+      color: hsl(30, 80%, 40%);
+      font-size: 1.5rem;
+      padding-block: 0.25rem;
+    }
+  }
 }
 
 @layer forms {
   fieldset {
     padding: 1rem;
+  }
+  .formBox {
+    margin-block: 2rem;
+  }
+  textarea {
+    height: 10lh;
+    width: 40rem;
+  }
+  form button {
+    background-color: hsl(30, 80%, 40%);
+    color: hsl(30, 80%, 90%);
+    border: none;
+    padding: 0.25rem 2rem;
+    font-size: 1rem;
   }
 }
