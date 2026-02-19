@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History, Navigation, SW Messages</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body id="" class="" data-page="">
+    <!-- 
+    Use the id, class, or a data- property to match a page section 
+    Or add a .current class to the section 
+    -->
+    <header>
+      <h1>History API, SPA Navigation, SW Messages</h1>
+    </header>
+    <main>
+      <section class="page apple">
+        <h2>Page Apple</h2>
+        <h3>List of Files from Cache</h3>
+        <h4>Click on One to Delete</h4>
+        <ul class="datalist"></ul>
+      </section>
+      <section class="page banana">
+        <h2>Page Banana</h2>
+        <h3>Add Data to Cache</h3>
+        <form>
+          <fieldset>
+            <div class="formBox">
+              <label for="info"> JSON Data </label>
+              <textarea id="info" name="info"></textarea>
+            </div>
+            <div class="formBox">
+              <button id="btnSaveData">Save to Cache</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+      <section class="page carrot">
+        <h2>Page Carrot</h2>
+        <h3>Details of One File from Cache</h3>
+        <div class="data"></div>
+      </section>
+    </main>
+  </body>
+</html>

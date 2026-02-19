@@ -1,0 +1,75 @@
+@layer defaults, pages, nav, forms;
+
+@layer defaults {
+  :root {
+    /* variables for font size, font family, colors, spacing */
+  }
+  * {
+    box-sizing: border-box;
+    font-weight: 300;
+  }
+  html,
+  body {
+    font-size: 1rem;
+    font-family: sans-serif;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+  }
+  code,
+  pre {
+    font-family: monospace;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: serif;
+  }
+}
+
+@layer pages {
+  header {
+    min-height: 4rem;
+    background-color: hsl(30, 70%, 70%);
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+      padding: 1rem 2rem;
+    }
+  }
+  .page {
+    position: absolute;
+    inset: 6rem 0 auto 0;
+    padding: 1rem 2rem;
+    /* opacity: 0; */
+    transition: opacity 0.4s linear;
+  }
+  .page.current {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+  [data-page='apple'] .page.apple,
+  [data-page='banana'] .page.banana,
+  [data-page='carrot'] .page.carrot {
+    /* alternative to .page.current */
+    /* data-page could be an id or classname */
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+@layer nav {
+}
+
+@layer forms {
+  fieldset {
+    padding: 1rem;
+  }
+}
