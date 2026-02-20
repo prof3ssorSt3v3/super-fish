@@ -28,8 +28,25 @@ function addListeners() {
 function handleInitialURL() {
   //Page has just loaded
   //validate the hash or set a default one
-  //trigger a nav event
+  //trigger a custom nav event OR call a nav faking function
 }
+function handlePop(ev) {
+  //use hit back/forward button
+  //trigger a custom nav event OR call a nav faking function
+}
+function handleNavClick(ev) {
+  ev.preventDefault();
+  let anchor = ev.target;
+  //exit if it was not an anchor
+  if (!anchor.classList.includes('nav-link') || anchor.localName != 'a') return;
+  //user clicked to navigate to a page
+  //trigger a custom nav event OR call a nav faking function
+}
+function handleNav(ev) {
+  //handle the custom nav event
+  //This is the function that updates the display and triggers data handling
+}
+
 function handleMessage(ev) {
   //message from service worker
 }
@@ -40,17 +57,4 @@ function handleForm(ev) {
   //form submitted
   ev.preventDefault();
   const fd = new FormData(ev.target);
-}
-function handlePop(ev) {
-  //use hit back/forward button
-}
-function handleNavClick(ev) {
-  ev.preventDefault();
-  let anchor = ev.target;
-  //exit if it was not an anchor
-  if (!anchor.classList.includes('nav-link') || anchor.localName != 'a') return;
-  //user clicked to navigate to a page
-}
-function handleNav(ev) {
-  //handle the custom nav event
 }
