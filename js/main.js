@@ -1,9 +1,14 @@
+import { FetchError, NavEvent } from './utils.js';
+const log = console.log;
+const warn = console.warn;
+
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
   //dom ready
   await registerSW(); //register the service worker before adding listeners
   addListeners();
+  handleInitialURL();
 }
 async function registerSW() {
   return await navigator.serviceWorker.register('./sw.js', { type: 'module' });
@@ -18,6 +23,12 @@ function addListeners() {
   document.querySelector('nav.main-nav').addEventListener('click', handleNavClick);
   //listeners for navigation
   window.addEventListener('popstate', handlePop);
+  document.body.addEventListener('navevent', handleNav);
+}
+function handleInitialURL() {
+  //Page has just loaded
+  //validate the hash or set a default one
+  //trigger a nav event
 }
 function handleMessage(ev) {
   //message from service worker
@@ -39,4 +50,7 @@ function handleNavClick(ev) {
   //exit if it was not an anchor
   if (!anchor.classList.includes('nav-link') || anchor.localName != 'a') return;
   //user clicked to navigate to a page
+}
+function handleNav(ev) {
+  //handle the custom nav event
 }
