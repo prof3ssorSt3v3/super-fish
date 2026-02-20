@@ -101,14 +101,14 @@ function handleNav(ev) {
   document.body.setAttribute('data-page', url.hash.replace('#', ''));
   switch (url.hash) {
     case '#apple':
-      document.body.style.backgroundColor = 'red';
+      // document.body.style.backgroundColor = 'red';
       sendMessage({ action: 'list' });
       break;
     case '#banana':
-      document.body.style.backgroundColor = 'yellow';
+      // document.body.style.backgroundColor = 'yellow';
       break;
     case '#carrot':
-      document.body.style.backgroundColor = 'orange';
+      // document.body.style.backgroundColor = 'orange';
       let params = url.searchParams;
       let file = params.get('file');
       let div = document.querySelector('.carrot div.data');
