@@ -10,7 +10,33 @@ async function registerSW() {
 }
 function addListeners() {
   //listeners for messaging
+  navigator.serviceWorker.addEventListener('message', handleMessage);
+  navigator.serviceWorker.addEventListener('messageerror', handleMessageError);
   //listeners for form submission
+  document.querySelector('.banana form').addEventListener('submit', handleForm);
   //listeners for mouse events
+  document.querySelector('nav.main-nav').addEventListener('click', handleNavClick);
   //listeners for navigation
+  window.addEventListener('popstate', handlePop);
+}
+function handleMessage(ev) {
+  //message from service worker
+}
+function handleMessageError(ev) {
+  //error sending/receiving message to/from service worker
+}
+function handleForm(ev) {
+  //form submitted
+  ev.preventDefault();
+  const fd = new FormData(ev.target);
+}
+function handlePop(ev) {
+  //use hit back/forward button
+}
+function handleNavClick(ev) {
+  ev.preventDefault();
+  let anchor = ev.target;
+  //exit if it was not an anchor
+  if (!anchor.classList.includes('nav-link') || anchor.localName != 'a') return;
+  //user clicked to navigate to a page
 }
