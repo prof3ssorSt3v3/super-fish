@@ -42,7 +42,8 @@
     position: absolute;
     inset: calc(6rem + 2rem + 2px) 0 auto 0;
     padding: 1rem 2rem;
-    /* opacity: 0; */
+    opacity: 0; /* default appearance of every page. */
+    z-index: 1;
     transition: opacity 0.4s linear;
   }
   .page.current {
@@ -58,6 +59,7 @@
     /* alternative to .page.current */
     /* data-page could be an id or classname */
     opacity: 1;
+    z-index: 100;
 
     @starting-style {
       opacity: 0;

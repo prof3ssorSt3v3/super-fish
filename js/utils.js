@@ -2,6 +2,7 @@
 class NavEvent extends CustomEvent {
   constructor(props) {
     super('navevent', { detail: { ...props } });
+    // ev.detail.whatever
   }
 }
 
